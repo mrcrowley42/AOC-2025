@@ -1,5 +1,3 @@
-from time import time
-s = time()
 with open("inputs/day-3.txt") as file:
     data = [list(map(int, list(line))) for line in file.read().splitlines()]
 
@@ -20,4 +18,3 @@ def get_total_jolts(n):
 
 print(get_total_jolts(2))
 print(get_total_jolts(12))
-print(time() - s)
