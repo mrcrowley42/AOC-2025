@@ -25,3 +25,26 @@ for r, row in enumerate(rolls):
             total += 1
 
 print(total)
+
+
+total = 0
+
+while True:
+    to_move = []
+    for r, row in enumerate(rolls):
+        for c, value in enumerate(row):
+            if value != "@":
+                continue
+            if can_move(r, c):
+                to_move.append((r, c))
+    
+    if not to_move:
+        break
+
+    for r, c in to_move:
+        rolls[r][c] = "."
+
+    total += len(to_move)
+
+
+print(total)
